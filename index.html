@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Er Fiza Tutorial | Premium Responsive Educational Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #090d16;
+            --primary-surface: #0f172a;
+            --accent-royal: #3b82f6;
+            --accent-glow: #60a5fa;
+            --accent-amber: #f59e0b;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.06);
+            --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 4rem 1.25rem; }
+        }
+
+        .btn-modern {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.2rem;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: none;
+            gap: 0.5rem;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-royal), #1d4ed8);
+            color: #ffffff;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background-color: #ffffff;
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .section-title span {
+            color: var(--accent-royal);
+        }
+
+        .section-subtitle {
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-size: 1.15rem;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            transition: var(--transition-smooth);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 85px;
+        }
+
+        .brand-logo-block {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .brand-logo-img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+        }
+
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-logo-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.2px;
+        }
+
+        .main-logo-title span {
+            color: var(--accent-royal);
+        }
+
+        .sub-logo-tagline {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-amber);
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-royal);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background-color: var(--accent-royal);
+            border-radius: var(--radius-full);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 19px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-dark);
+            border-radius: var(--radius-full);
+            transition: var(--transition-smooth);
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(9, 13, 22, 0.96), rgba(15, 23, 42, 0.92)), url('hero-bg.png') no-repeat center center/cover;
+            color: #ffffff;
+            padding: 12rem 2rem 8rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15), transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 5;
+        }
+
+        .hero-badge {
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--accent-glow);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, #60a5fa, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-director-tag {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-amber);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            margin-bottom: 3rem;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .hero-highlights-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-tag-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #f1f5f9;
+        }
+
+        .hero-tag-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--accent-glow);
+            flex-shrink: 0;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .founder-section {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .founder-card {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1040px;
+            margin: 0 auto;
+            background: var(--bg-body);
+            padding: 4rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+        }
+
+        .founder-img-frame {
+            flex-shrink: 0;
+            width: 180px;
+            height: 180px;
+            border-radius: var(--radius-full);
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
+            overflow: hidden;
+            border: 4px solid var(--accent-royal);
+            position: relative;
+        }
+
+        .founder-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .founder-bio {
+            flex-grow: 1;
+        }
+
+        .founder-bio h3 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.5px;
+        }
+
+        .founder-title {
+            color: var(--accent-royal);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .founder-bio p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.75;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery-item {
+            position: relative;
+            background-color: #ffffff;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-royal);
+        }
+
+        .gallery-image-box {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background-color: #f1f5f9;
+            position: relative;
+        }
+
+        .gallery-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover .gallery-image-box img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .view-btn {
+            background: #ffffff;
+            color: var(--primary-dark);
+            padding: 0.6rem 1.4rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .gallery-details {
+            padding: 1.25rem 1.5rem;
+            background: #ffffff;
+            border-top: 1px solid #f1f5f9;
+            flex-grow: 1;
+        }
+
+        .gallery-details h4 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+        }
+
+        .gallery-details p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(9, 13, 22, 0.95);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85%;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .lightbox.active .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 45px;
+            font-weight: 300;
+            cursor: pointer;
+            user-select: none;
+            transition: var(--transition-smooth);
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent-glow);
+            transform: scale(1.1);
+        }
+
+        .features-section {
+            background-color: var(--bg-body);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-item-card {
+            background: var(--bg-card);
+            padding: 3rem 2.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+            transition: var(--transition-smooth);
+        }
+
+        .feature-item-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-glow);
+            transform: translateY(-4px);
+        }
+
+        .icon-circle-badge {
+            width: 65px;
+            height: 65px;
+            border-radius: var(--radius-md);
+            background-color: rgba(59, 130, 246, 0.08);
+            color: var(--accent-royal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-item-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+
+        .feature-item-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .feature-item-card ul li {
+            margin-bottom: 0.85rem;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .feature-item-card ul li strong {
+            color: var(--primary-dark);
+        }
+
+        .feature-item-card ul li::before {
+            content: "✦";
+            color: var(--accent-royal);
+            font-weight: bold;
+        }
+
+        .reviews-layout {
+            max-width: 960px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .ux-review-bubble {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .user-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .user-avatar-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius-full);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .avatar-i { background-color: #64748b; }
+        .avatar-r { background-color: #ec407a; }
+
+        .meta-details h5 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .meta-details span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .star-stars-row {
+            color: var(--accent-amber);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .quote-review-paragraph {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .faq-section { background-color: var(--bg-body); }
+        .faq-max-width-box { max-width: 800px; margin: 0 auto; }
+        
+        .faq-interactive-node {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            margin-bottom: 1.25rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-interactive-node:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .faq-clickable-bar {
+            padding: 1.5rem 2rem;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-icon-indicator {
+            width: 32px;
+            height: 32px;
+            background-color: var(--bg-body);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            transition: var(--transition-smooth);
+        }
+
+        .faq-collapsible-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 0 2rem;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .faq-interactive-node.active-node {
+            border-color: var(--accent-royal);
+            box-shadow: var(--shadow-md);
+        }
+        .faq-interactive-node.active-node .faq-collapsible-panel {
+            max-height: 300px;
+            padding-bottom: 1.5rem;
+        }
+        .faq-interactive-node.active-node .faq-icon-indicator {
+            transform: rotate(45deg);
+            background-color: var(--accent-royal);
+            color: #ffffff;
+        }
+
+        .contact-grid-system {
+            display: grid;
+            grid-template-columns: 1.1fr 1.3fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-card-sidebar h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card-sidebar p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .modern-info-row {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-circle-avatar {
+            width: 55px;
+            height: 55px;
+            background-color: rgba(59, 130, 246, 0.06);
+            color: var(--accent-royal);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .info-content-text h5 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            color: var(--primary-dark);
+        }
+
+        .info-content-text p {
+            margin-bottom: 0;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .premium-ux-form {
+            background: var(--bg-card);
+            padding: 3.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .input-row-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .input-row-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+        }
+
+        .ui-form-control {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 1.5px solid #cbd5e1;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--primary-dark);
+            background-color: var(--bg-card);
+            transition: var(--transition-smooth);
+        }
+
+        .ui-form-control:focus {
+            outline: none;
+            border-color: var(--accent-royal);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+        }
+
+        .form-status-msg {
+            display: none;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Premium Social Media Icons System - Vibrant Brand Colors */
+        .footer-social-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 1.2rem;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            color: #ffffff; /* White icon glyphs */
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        /* Official Brand Background Gradients & Solids */
+        .social-btn.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .social-btn.youtube {
+            background-color: #ff0000;
+        }
+
+        /* Interactive Focus & Lift States */
+        .social-btn:hover {
+            transform: translateY(-4px);
+            filter: brightness(1.15);
+        }
+
+        .social-btn.instagram:hover {
+            box-shadow: 0 8px 24px rgba(214, 36, 159, 0.4);
+        }
+
+        .social-btn.youtube:hover {
+            box-shadow: 0 8px 24px rgba(255, 0, 0, 0.4);
+        }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: #94a3b8;
+            padding: 4rem 2rem 2rem;
+            font-size: 0.95rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-upper-tier {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .footer-logo-title {
+            color: #ffffff;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-links-row {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .footer-links-row a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            font-weight: 500;
+        }
+
+        .footer-links-row a:hover {
+            color: #ffffff;
+        }
+
+        .copyright-bottom-row {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.88rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid-system {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .founder-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 2rem;
+                gap: 2.5rem;
+            }
+            .hero h1 { font-size: 3.2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            .menu-toggle.open-state span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .menu-toggle.open-state span:nth-child(2) { opacity: 0; }
+            .menu-toggle.open-state span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+            .nav-menu {
+                position: fixed;
+                top: 85px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 85px);
+                background-color: var(--bg-card);
+                flex-direction: column;
+                padding: 3rem 2rem;
+                gap: 2rem;
+                box-shadow: var(--shadow-lg);
+                transition: var(--transition-smooth);
+                align-items: flex-start;
+            }
+
+            .nav-menu.active-state { left: 0; }
+            .nav-link { font-size: 1.3rem; width: 100%; display: block; }
+            .hero { padding-top: 10rem; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero p { font-size: 1.1rem; }
+            .hero-highlights-row { gap: 1.25rem; }
+            .reviews-layout { grid-template-columns: 1fr; }
+            .premium-ux-form { padding: 2rem 1.5rem; }
+            
+            .footer-upper-tier {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            .footer-social-group {
+                margin-top: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-btn {
+                width: 40px;
+                height: 40px;
+            }
+            .social-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.2); }
+            100% { box-shadow: 0 0 16px 4px rgba(59, 130, 246, 0.4); }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="mainHeader">
+        <nav class="navbar">
+            <a href="#home" class="brand-logo-block">
+                <img src="Sin.png" alt="Er Fiza Tutorial Brand Logo" class="brand-logo-img">
+                <div class="logo-text-group">
+                    <div class="main-logo-title">Er Fiza<span> Tutorial</span></div>
+                    <div class="sub-logo-tagline">WC (Wild Child topper spirit)</div>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="uiMenuTrigger" aria-label="Open Navigation Directory Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="uiNavMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#founder" class="nav-link">The Founder</a></li>
+                <li><a href="#gallery" class="nav-link">Campus Gallery</a></li>
+                <li><a href="#features" class="nav-link">Support Services</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="#faqs" class="nav-link">FAQs</a></li>
+                <li><a href="#contact" class="nav-link">Contact Hub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>✦</span> Home of WC (Wild Child Topper spirit) Batches
+            </div>
+            <h1>ER. FIZA TUTORIAL</h1>
+            <div class="hero-director-tag">All Classes Upto 12th — Managed by Fiza Zafar Khan</div>
+            <p>Specializing in Mathematics, English, Physics, Chemistry, and Biology. Delivering rigorous preparation for CBSE, ICSE, UP, NIOS & all educational boards.</p>
+            
+            <div class="hero-highlights-row">
+                <div class="hero-tag-item">
+                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                    7 Days Active Batches
+                </div>
+                <div class="hero-tag-item">
+                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                    Weekly Concept Evaluation Tests
+                </div>
+                <div class="hero-tag-item">
+                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                    Individual Attention Loop
+                </div>
+            </div>
+
+            <div class="hero-cta-group">
+                <a href="#contact" class="btn-modern btn-primary">Claim Free Trial Class</a>
+                <a href="#gallery" class="btn-modern btn-secondary">Explore Campus Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="founder" class="founder-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Leadership Spotlight</h2>
+                <p class="section-subtitle">The driving force behind our continuous academic distinction records.</p>
+            </div>
+            
+            <div class="founder-card">
+                <div class="founder-img-frame">
+                    <img src="WC.png" alt="WC Logo Illustration Frame" class="founder-logo-img">
+                </div>
+                <div class="founder-bio">
+                    <h3>Fiza Zafar Khan</h3>
+                    <span class="founder-title">Managing Director & Founder</span>
+                    <p>At Er Fiza Tutorial, our vision is built completely around empowering students to transform their hidden potential into academic superiority. Through our specialized coaching wings, including the elite <b>WC (Wild Child topper spirit)</b> curriculum, we focus on interactive, rigorous, and concept-driven training schedules. We ensure that every student receives precision mentorship across fundamental core subjects to comfortably lead high-ranking percentiles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" style="padding: 6rem 2rem; background: #ffffff; border-top: 1px solid #e2e8f0;">
+        <div style="max-width: 1280px; margin: 0 auto;">
+            <div class="section-header">
+                <h2 class="section-title">Campus <span>Life & Collage Gallery</span></h2>
+                <p class="section-subtitle">Take an inside look at our dynamic learning circles, performance rewards, community milestone celebrations, and group sporting tracks.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.09.47 PM.png')">
+                    <div class="gallery-image-box">
+                        <img src="AS.png" alt="Interactive Classroom Discussion Session">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Focused Classroom Session</h4>
+                        <p>A peek inside our interactive classroom layout where students actively collaborate on concept discussions under structured guidelines.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.09.47 PM (1).png')">
+                    <div class="gallery-image-box">
+                        <img src="BS.png" alt="Smart Board Concept Presentation">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Visual Projection Tech</h4>
+                        <p>Utilizing high-end smart-projection monitors to simplify multi-tiered equations in Mathematics and Physics streams.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.09.48 PM.png')">
+                    <div class="gallery-image-box">
+                        <img src="CS.png" alt="Student Achievement Recognition">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Milestone Recognition</h4>
+                        <p>Honoring our top academic ranking performers with token appreciation gifts to foster a healthy, goal-driven mindset.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.09.49 PM.png')">
+                    <div class="gallery-image-box">
+                        <img src="Sam.png" alt="Reward Distribution Framework">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Excell Excellence Certificates</h4>
+                        <p>Distributing official achievement rewards to student cohorts who demonstrate consistent top scores in assessment tests.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.09.50 PM.png')">
+                    <div class="gallery-image-box">
+                        <img src="Du.png" alt="Evening Interactive Group Discussion">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Evening Study Circles</h4>
+                        <p>High-energy group engagement tracks allowing peers to comfortably clear complicated doubts in an inviting environment.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.09.50 PM (1).png')">
+                    <div class="gallery-image-box">
+                        <img src="BS.png" alt="Whiteboard Conceptual Explanation Flow">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Concept Micro-Targeting</h4>
+                        <p>Step-by-step whiteboard analytical workflows keeping fundamental definitions transparent and easy to process.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.09.52 PM.png')">
+                    <div class="gallery-image-box">
+                        <img src="BS.png" alt="Festive Sweet Distribution Event">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Cultural Festivities</h4>
+                        <p>Spreading joy, community bonding, and sweet treats across the institute during key cultural holiday schedules.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.09.53 PM.png')">
+                    <div class="gallery-image-box">
+                        <img src="LS.png" alt="Outdoor Cake Cutting Celebration">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Community Ceremonies</h4>
+                        <p>Gathering outdoors to share milestone moments and celebrate institutional success tracks together as one family.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.09.53 PM (1).png')">
+                    <div class="gallery-image-box">
+                        <img src="IS.png" alt="Team Building Outdoor Assembly">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Youth Leadership Formations</h4>
+                        <p>Fostering vital soft skills, communication proficiency, and strong leadership roots through group interaction assets.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.10.18 PM.png')">
+                    <div class="gallery-image-box">
+                        <img src="JS.png" alt="Large Student Batch turf Assembly">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Sports Arena Outing</h4>
+                        <p>Promoting well-rounded physical fitness by hosting structured, competitive football and cricket games at turf pitches.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.10.20 PM.png')">
+                    <div class="gallery-image-box">
+                        <img src="FS.png" alt="Athletic Track Team Up">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>Extracurricular Mixers</h4>
+                        <p>Providing essential balance away from desk workloads to help children maintain high focus and alleviate routine exam pressure.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox('WhatsApp Image 2026-06-18 at 11.10.21 PM.png')">
+                    <div class="gallery-image-box">
+                        <img src="HS.png" alt="Students Wearing Branded Jackets Behind Celebration Cake">
+                        <div class="gallery-overlay"><span class="view-btn">Expand View</span></div>
+                    </div>
+                    <div class="gallery-details">
+                        <h4>The WC Core Identity</h4>
+                        <p>Students wearing premium, custom-branded gear as a symbol of pride and shared purpose within the tutorial's network.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Academic Support <span>Framework</span></h2>
+                <p class="section-subtitle">Upholding strict structural standards in education to maintain an ideal growth environment.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item-card">
+                    <div class="icon-circle-badge">📖</div>
+                    <h3>Premium Utilities</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Comprehensive assistance frameworks built directly around the student's core learning requirements.</p>
+                    <ul>
+                        <li><strong>Library:</strong> Well-stocked selection of reference guides.</li>
+                        <li><strong>Study Material:</strong> Comprehensive updated lesson reviews.</li>
+                        <li><strong>Online Resources:</strong> Practice portals for extra practice.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-item-card">
+                    <div class="icon-circle-badge">🛡️</div>
+                    <h3>Coaching Policies</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Rigorous attendance parameters and tracking structures ensuring performance uniformity.</p>
+                    <ul>
+                        <li><strong>Mandatory Attendance:</strong> Regularity to maximize score graphs.</li>
+                        <li><strong>Parental Engagement:</strong> Strategic parent-teacher updates.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-item-card">
+                    <div class="icon-circle-badge">⚡</div>
+                    <h3>Evaluation Metrics</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Identifying hidden academic gaps through continuous performance monitoring metrics.</p>
+                    <ul>
+                        <li><strong>Doubt Clearing:</strong> Dedicated structured clearing hours.</li>
+                        <li><strong>Mock Tests:</strong> Routine testing to track speed curves.</li>
+                        <li><strong>Counseling:</strong> Mentorship for stress-free exam performance.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="container">
+        <div class="section-header">
+            <h2 class="section-title">Verified Student <span>Feedback</span></h2>
+            <p class="section-subtitle">Read unfiltered feedback left directly by our active learning batches.</p>
+        </div>
+        
+        <div class="reviews-layout">
+            <div class="ux-review-bubble">
+                <div>
+                    <div class="user-meta-row">
+                        <div class="user-avatar-circle avatar-i">I</div>
+                        <div class="meta-details">
+                            <h5>Iqbal Khan</h5>
+                            <span>a year ago • 1 review</span>
+                        </div>
+                    </div>
+                    <div class="star-stars-row">★★★★★</div>
+                    <p class="quote-review-paragraph">"Best coaching besttt teacher 🤠"</p>
+                </div>
+            </div>
+
+            <div class="ux-review-bubble">
+                <div>
+                    <div class="user-meta-row">
+                        <div class="user-avatar-circle avatar-r">R</div>
+                        <div class="meta-details">
+                            <h5>Rida Fatima</h5>
+                            <span>a year ago • 1 review</span>
+                        </div>
+                    </div>
+                    <div class="star-stars-row">★★★★★</div>
+                    <p class="quote-review-paragraph">"The best and intellectual way of teaching"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faqs" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+                <p class="section-subtitle">Meticulously cataloged answers to clarify admission processes and class mechanics.</p>
+            </div>
+            
+            <div class="faq-max-width-box">
+                <div class="faq-interactive-node">
+                    <div class="faq-clickable-bar">1. Will the tutorial school provide study material and notebooks? <span class="faq-icon-indicator">+</span></div>
+                    <div class="faq-collapsible-panel">Some tutorials provide study material and some do not. However, there have been instances wherein certain material is distributed as it was deemed essential for proper illustration. You can check with Fiza Tutorial in Dubagga to get more information on the same.</div>
+                </div>
+                <div class="faq-interactive-node">
+                    <div class="faq-clickable-bar">2. How do I locate Fiza Tutorial in Dubagga? <span class="faq-icon-indicator">+</span></div>
+                    <div class="faq-collapsible-panel">These classes are so easy to find because it is just Near Baby Martin School.</div>
+                </div>
+                <div class="faq-interactive-node">
+                    <div class="faq-clickable-bar">3. How many students does one class accommodate? <span class="faq-icon-indicator">+</span></div>
+                    <div class="faq-collapsible-panel">Fiza Tutorial in Lucknow does not believe in overcrowding classes because the children do not get individual attention then. So, they try to fit lesser numbers in each batch. But, batches are divided depending on the total number of students considering the demand for a specific course and the number of batches and instructors available. So, this will change from time to time.</div>
+                </div>
+                <div class="faq-interactive-node">
+                    <div class="faq-clickable-bar">4. What are the class timings at Fiza Tutorial? <span class="faq-icon-indicator">+</span></div>
+                    <div class="faq-collapsible-panel">Tutorial classes will be on during Monday to Sunday: 3:30 pm - 8:30 pm across all 7 days of the week.</div>
+                </div>
+                <div class="faq-interactive-node">
+                    <div class="faq-clickable-bar">5. Can Fiza Tutorial arrange for one-on-one classes for my child? <span class="faq-icon-indicator">+</span></div>
+                    <div class="faq-collapsible-panel">Most of the tutorials do not offer one-on-one classes. If you feel your child requires special individual attention with certain subjects, you may approach the authorities at the centre.</div>
+                </div>
+                <div class="faq-interactive-node">
+                    <div class="faq-clickable-bar">6. How can I contact Fiza Tutorial in Dubagga, Lucknow? <span class="faq-icon-indicator">+</span></div>
+                    <div class="faq-collapsible-panel">You can contact Fiza Tutorial in Dubagga directly through the contact numbers provided or by filling out the admissions inquiry form below.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="section-header">
+            <h2 class="section-title">Registration <span>Hub</span></h2>
+            <p class="section-subtitle">Connect with our administrative board directly to book your orientation desk.</p>
+        </div>
+        
+        <div class="contact-grid-system">
+            <div class="contact-card-sidebar">
+                <h3>Admissions Open</h3>
+                <p>Visit our flagship branch hub or place a telephone call to settle details regarding active batch tracks, fees structures, and routine timetables.</p>
+                
+                <div class="modern-info-row">
+                    <div class="info-circle-avatar">📞</div>
+                    <div class="info-content-text">
+                        <h5>Call Director (Fiza Zafar Khan)</h5>
+                        <p>+91 91162 54861</p>
+                    </div>
+                </div>
+
+                <div class="modern-info-row">
+                    <div class="info-circle-avatar">📍</div>
+                    <div class="info-content-text">
+                        <h5>Campus Address</h5>
+                        <p>Near Baby Martin School, Gate No.4, Dubagga, Lucknow, Uttar Pradesh, India</p>
+                    </div>
+                </div>
+
+                <div class="modern-info-row">
+                    <div class="info-circle-avatar">✉️</div>
+                    <div class="info-content-text">
+                        <h5>Email Us</h5>
+                        <p>fizazafarkhan@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="premium-ux-form" id="dualActionEnrollmentForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="470c8274-56d2-41f2-9c6f-72bfbcdce31d">
+                <input type="hidden" name="subject" value="New Admission Enquiry - Er Fiza Tutorial">
+                <input type="hidden" name="from_name" value="Website Enquiry Bot">
+
+                <div class="input-row-group">
+                    <label for="studentNameField">Student Full Name</label>
+                    <input type="text" id="studentNameField" name="Student_Name" class="ui-form-control" placeholder="Enter full name" required>
+                </div>
+                <div class="input-row-group">
+                    <label for="studentPhoneField">Student/Parent Mobile Number</label>
+                    <input type="tel" id="studentPhoneField" name="Mobile_Number" class="ui-form-control" placeholder="Enter 10-digit mobile phone number" required>
+                </div>
+                <div class="input-row-group">
+                    <label for="subjectTrackSelect">Target Subject Track</label>
+                    <select id="subjectTrackSelect" name="Selected_Subject" class="ui-form-control">
+                        <option value="Mathematics Mastery">Mathematics Mastery</option>
+                        <option value="Physics & Chemistry Core">Physics & Chemistry Core</option>
+                        <option value="English Language & Grammar">English Language & Grammar</option>
+                        <option value="Biology Science Core">Biology Science Core</option>
+                    </select>
+                </div>
+                <div class="input-row-group">
+                    <label for="studentMessageArea">Your Class / Board / Details</label>
+                    <textarea id="studentMessageArea" name="Student_Message" class="ui-form-control" rows="4" placeholder="Mention your current class board (e.g., CBSE Class 10/12) or other specific queries" required></textarea>
+                </div>
+                
+                <button type="submit" id="submitBtn" class="btn-modern btn-primary" style="width: 100%;">Submit & Open WhatsApp Channel</button>
+                
+                <div id="formStatusBox" class="form-status-msg"></div>
+            </form>
+        </div>
+    </section>
+
+    <div id="galleryLightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Enlarged view presentation item" onclick="event.stopPropagation()">
+    </div>
+
+    <footer>
+        <div class="footer-wrap">
+            <div class="footer-upper-tier">
+                <div>
+                    <div class="footer-logo-title">Er Fiza Tutorial</div>
+                    <div class="footer-social-group">
+                        <a href="https://www.instagram.com/er.tutorial?igsh=cWlpNGtyYmZpZnVu" target="_blank" rel="noopener noreferrer" class="social-btn instagram" aria-label="Open Er Fiza Tutorial Instagram Page">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@er.tutorial?si=8wrC1E2_IMW0sfk7" target="_blank" rel="noopener noreferrer" class="social-btn youtube" aria-label="Open Er Fiza Tutorial YouTube Channel">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <ul class="footer-links-row">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#founder">The Founder</a></li>
+                    <li><a href="#gallery">Campus Gallery</a></li>
+                    <li><a href="#features">Support Services</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="copyright-bottom-row">
+                &copy; 2026 Er Fiza Tutorial. All Rights Reserved. Founded & Managed by Fiza Zafar Khan.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('uiMenuTrigger');
+        const navMenuNode = document.getElementById('uiNavMenu');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open-state');
+            navMenuNode.classList.toggle('active-state');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(anchorNode => {
+            anchorNode.addEventListener('click', () => {
+                menuBtn.classList.remove('open-state');
+                navMenuNode.classList.remove('active-state');
+            });
+        });
+
+        document.querySelectorAll('.faq-clickable-bar').forEach(triggerBar => {
+            triggerBar.addEventListener('click', () => {
+                const currentNode = triggerBar.parentElement;
+                document.querySelectorAll('.faq-interactive-node').forEach(node => {
+                    if (node !== currentNode) node.classList.remove('active-node');
+                });
+                currentNode.classList.toggle('active-node');
+            });
+        });
+
+        // LIGHTBOX SYSTEM WITH PNG TARGET SUPPORT
+        const lightbox = document.getElementById('galleryLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            setTimeout(() => { lightboxImg.src = ''; }, 300);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape" && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        const multiChannelForm = document.getElementById('dualActionEnrollmentForm');
+        const statusBox = document.getElementById('formStatusBox');
+        const submitBtn = document.getElementById('submitBtn');
+
+        multiChannelForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            submitBtn.textContent = "Processing Enquiry...";
+            submitBtn.disabled = true;
+
+            const nameData = document.getElementById('studentNameField').value;
+            const phoneData = document.getElementById('studentPhoneField').value;
+            const trackData = document.getElementById('subjectTrackSelect').value;
+            const contextData = document.getElementById('studentMessageArea').value;
+
+            const targetPhoneURI = "919116254861"; 
+            const whatsappMessageTemplate = `*New Admission Enquiry - Er Fiza Tutorial*%0A%0A` +
+                                             `• *Student Name:* ${encodeURIComponent(nameData)}%0A` +
+                                             `• *Contact Number:* ${encodeURIComponent(phoneData)}%0A` +
+                                             `• *Selected Track:* ${encodeURIComponent(trackData)}%0A` +
+                                             `• *Class/Board/Message:* ${encodeURIComponent(contextData)}`;
+            const deepLinkEndpoint = `https://api.whatsapp.com/send?phone=${targetPhoneURI}&text=${whatsappMessageTemplate}`;
+
+            const formData = new FormData(multiChannelForm);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(async (response) => {
+                if (response.status == 200) {
+                    statusBox.className = "form-status-msg success";
+                    statusBox.style.display = "block";
+                    statusBox.textContent = "Enquiry logged securely. Opening WhatsApp chat channel...";
+                    window.open(deepLinkEndpoint, '_blank');
+                } else {
+                    window.open(deepLinkEndpoint, '_blank');
+                }
+            })
+            .catch(error => {
+                window.open(deepLinkEndpoint, '_blank');
+            })
+            .finally(() => {
+                submitBtn.textContent = "Submit & Open WhatsApp Channel";
+                submitBtn.disabled = false;
+                multiChannelForm.reset();
+                setTimeout(() => { statusBox.style.display = 'none'; }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
